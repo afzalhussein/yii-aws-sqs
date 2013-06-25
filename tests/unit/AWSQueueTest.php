@@ -12,7 +12,7 @@ class AWSQueueTest extends CTestCase
             'Testing*^quee', //KO
         );
 
-        foreach($invalidNames $name)
+        foreach($invalidCharacterNames as $name)
         {
             $q->name=$name;
             $this->assertFalse($q->validate());
@@ -23,7 +23,7 @@ class AWSQueueTest extends CTestCase
             'Testing_13-45', //OK
         );
 
-        foreach($validNames as $name)
+        foreach($validCharacterNames as $name)
         {
             $q->name=$name;
             $this->assertTrue($q->validate());
